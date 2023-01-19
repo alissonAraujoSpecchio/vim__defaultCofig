@@ -46,7 +46,16 @@ function! JsonView()
     :w
 endfunction
 
+function! CopyAll()
+    norm gg"+yG''
+    echo "Entire text copied to clipboard."
+endfunction
+
 nnoremap <S-F5> :call Build()<CR>
 nnoremap <F6> :call FoldMethodIndent()<CR>
 nnoremap <F7> :call FoldMethodManual()<CR>
+
+" Copy everything
+"nnoremap <S-F8> gg"+yG''
+nnoremap <S-F8> :call CopyAll()<CR>
 ```
